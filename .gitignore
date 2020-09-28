@@ -1,0 +1,7 @@
+# System files
+.DS_Store
+
+# Obsolete project files
+restorePoints
+*.bak
+*.bkup
