@@ -5,3 +5,8 @@
 restorePoints
 *.bak
 *.bkup
+
+# Temporary omitted
+# Possibly could be included when more tailored Views/Dashboards are created
+dashboard
+TuneView
