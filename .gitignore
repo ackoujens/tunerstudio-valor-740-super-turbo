@@ -6,6 +6,7 @@ restorePoints
 *.bak
 *.bkup
 *.log
+persistedChannelValues.properties
 
 # Temporary omitted
 # Possibly could be included when more tailored Views/Dashboards are created
