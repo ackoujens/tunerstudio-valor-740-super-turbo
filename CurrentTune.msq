@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <msq xmlns="http://www.msefi.com/:msq">
-<bibliography author="TunerStudio MS Ultra 3.1.03 - EFI Analytics, Inc." tuneComment="Banks&#10;grouped them on cylinders 1 &amp; 4, and 2 &amp; 3&#10;&#10;- Injector model/type?&#10;- Does your coolant temperature sensor reading look correct? It should be close to your air temperature on your first cold start. If this reading is off, try recalibrating the coolant temperature sensor settings.&#10;- Do you get a steady RPM while cranking (what is steady?)&#10;- Spark timing correct or withing 2-3 degrees ballpark of what MS thinks it is&#10;&#10;- When the engine starts turning, the MegaSquirt will run off the cranking pulse width table in batch fire mode until the RPM rises above the cranking RPM threshold. &#10; This usually fires the fuel once per ignition event in batch fire, although the newer MS2/Extra and MS3 codes allow injecting fuel every other event, and MS3 1.3.0 and later allows sequential fire while cranking. &#10;Note that you can shut down the fuel when cranking by opening the throttle past the flood clear threshold setting.&#10;Once the RPM rises above the cranking threshold, the MegaSquirt transitions to the main fuel table. &#10;It will initially multiply the pulse width from this table by the warmup enrichment (WUE) and afterstart enrichment (ASE) combined.&#10;&#10;If the engine stays cranking for a while without catching, adjust the cranking pulse width setting at the temperature where you&#8217;re having this problem. It&#8217;s often best to start with what you think is not enough pulse width and add more in, since a flooded engine can take a bit longer to clear. A good rule of thumb to figure out which way to go is to try giving it a little bit of throttle and cranking it. If more throttle makes it easier to start, try less cranking pulse width. If it makes things worse, try more. Note that if you&#8217;re seeing zero cranking pulse width, you&#8217;ve probably triggered flood clear mode. Check your TPS readings, as having this go too high will shut down the injectors.&#10;&#10;If you find you&#8217;re not getting anywhere with the throttle test, try pulling a spark plug after a failed start, and see if it&#8217;s wet with fuel or dry. If it&#8217;s wet, reduce the fueling; if it&#8217;s dry, add more fuel to the cranking pulse width.&#10;&#10;" writeDate="Sat Dec 05 17:12:26 CET 2020"/>
+<bibliography author="TunerStudio MS Ultra 3.1.03 - EFI Analytics, Inc." tuneComment="Banks&#10;grouped them on cylinders 1 &amp; 4, and 2 &amp; 3&#10;&#10;- Injector model/type?&#10;- Does your coolant temperature sensor reading look correct? It should be close to your air temperature on your first cold start. If this reading is off, try recalibrating the coolant temperature sensor settings.&#10;- Do you get a steady RPM while cranking (what is steady?)&#10;- Spark timing correct or withing 2-3 degrees ballpark of what MS thinks it is&#10;&#10;- When the engine starts turning, the MegaSquirt will run off the cranking pulse width table in batch fire mode until the RPM rises above the cranking RPM threshold. &#10; This usually fires the fuel once per ignition event in batch fire, although the newer MS2/Extra and MS3 codes allow injecting fuel every other event, and MS3 1.3.0 and later allows sequential fire while cranking. &#10;Note that you can shut down the fuel when cranking by opening the throttle past the flood clear threshold setting.&#10;Once the RPM rises above the cranking threshold, the MegaSquirt transitions to the main fuel table. &#10;It will initially multiply the pulse width from this table by the warmup enrichment (WUE) and afterstart enrichment (ASE) combined.&#10;&#10;If the engine stays cranking for a while without catching, adjust the cranking pulse width setting at the temperature where you&#8217;re having this problem. It&#8217;s often best to start with what you think is not enough pulse width and add more in, since a flooded engine can take a bit longer to clear. A good rule of thumb to figure out which way to go is to try giving it a little bit of throttle and cranking it. If more throttle makes it easier to start, try less cranking pulse width. If it makes things worse, try more. Note that if you&#8217;re seeing zero cranking pulse width, you&#8217;ve probably triggered flood clear mode. Check your TPS readings, as having this go too high will shut down the injectors.&#10;&#10;If you find you&#8217;re not getting anywhere with the throttle test, try pulling a spark plug after a failed start, and see if it&#8217;s wet with fuel or dry. If it&#8217;s wet, reduce the fueling; if it&#8217;s dry, add more fuel to the cranking pulse width.&#10;&#10;" writeDate="Sat Dec 05 18:24:41 CET 2020"/>
 <versionInfo fileFormat="5.0" firmwareInfo="MS3+1.5.1+release+++++20171006+16%3A30BST+%28c%29+JSM%2FKC+********" nPages="20" signature="MS3 Format 0566.05 "/>
 <page>
 <pcVariable name="tsCanId">"CAN ID 0"</pcVariable>
@@ -134,7 +134,7 @@
 <constant digits="1" name="fastIdleT" units="°C">59.994</constant>
 <constant digits="1" name="egoTemp" units="°C">71.104</constant>
 <constant digits="0" name="egoRPM" units="RPM">1300.0</constant>
-<constant digits="2" name="reqFuel" units="ms">6.15</constant>
+<constant digits="2" name="reqFuel" units="ms">6.25</constant>
 <constant digits="0" name="divider">2.0</constant>
 <constant name="alternate">"Simultaneous"</constant>
 <constant name="altcrank">"Every event"</constant>
@@ -346,7 +346,7 @@
 <constant digits="1" name="launchvss_minvss" units="KPH">3.6</constant>
 <constant digits="2" name="flats_deg" units="deg">5.0</constant>
 <constant digits="0" name="flats_hrd" units="RPM">4800.0</constant>
-<constant digits="0" name="staged_pri_size" units="cc">315.0</constant>
+<constant digits="0" name="staged_pri_size" units="cc">312.0</constant>
 <constant digits="0" name="staged_sec_size" units="cc">600.0</constant>
 <constant name="staged_first_param">"Off"</constant>
 <constant name="staged_second_param">"Off"</constant>
@@ -6200,17 +6200,20 @@
          16390.0 
          16392.0 
          8203.0 
+         8204.0 
          16400.0 
          16402.0 
          16404.0 
          16406.0 
          16408.0 
          16410.0 
+         16424.0 
          16432.0 
          16438.0 
          16446.0 
          16450.0 
          8262.0 
+         8263.0 
          8270.0 
          8271.0 
          8272.0 
@@ -6219,20 +6222,17 @@
          8278.0 
          8279.0 
          8286.0 
+         8444.0 
          16652.0 
+         16684.0 
          8522.0 
          16720.0 
          16722.0 
          8543.0 
          16824.0 
+         8638.0 
          8639.0 
          8679.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
          0.0 
          0.0 
          0.0 
@@ -6857,34 +6857,34 @@
          0.0 
       </constant>
 <constant cols="1" digits="0" name="UNALLOCATED_TOP_15" rows="28" units="RAW">
-         0.0 
+         64.0 
          22.0 
          130.0 
          0.0 
          46.0 
          19.0 
+         194.0 
          66.0 
-         66.0 
-         64.0 
-         32.0 
+         73.0 
+         96.0 
          23.0 
          4.0 
          64.0 
-         201.0 
+         203.0 
          146.0 
          4.0 
-         21.0 
-         52.0 
-         52.0 
-         3.0 
-         152.0 
+         23.0 
+         60.0 
+         53.0 
+         135.0 
+         156.0 
          168.0 
          240.0 
          152.0 
-         214.0 
+         182.0 
          252.0 
-         41.0 
-         227.0 
+         105.0 
+         243.0 
       </constant>
 </page>
 <page number="16" size="1024">
