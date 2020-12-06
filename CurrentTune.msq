@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <msq xmlns="http://www.msefi.com/:msq">
-<bibliography author="TunerStudio MS Ultra 3.1.03 - EFI Analytics, Inc." tuneComment="Banks&#10;grouped them on cylinders 1 &amp; 4, and 2 &amp; 3&#10;&#10;- Injector model/type?&#10;- Does your coolant temperature sensor reading look correct? It should be close to your air temperature on your first cold start. If this reading is off, try recalibrating the coolant temperature sensor settings.&#10;- Do you get a steady RPM while cranking (what is steady?)&#10;- Spark timing correct or withing 2-3 degrees ballpark of what MS thinks it is&#10;&#10;- When the engine starts turning, the MegaSquirt will run off the cranking pulse width table in batch fire mode until the RPM rises above the cranking RPM threshold. &#10; This usually fires the fuel once per ignition event in batch fire, although the newer MS2/Extra and MS3 codes allow injecting fuel every other event, and MS3 1.3.0 and later allows sequential fire while cranking. &#10;Note that you can shut down the fuel when cranking by opening the throttle past the flood clear threshold setting.&#10;Once the RPM rises above the cranking threshold, the MegaSquirt transitions to the main fuel table. &#10;It will initially multiply the pulse width from this table by the warmup enrichment (WUE) and afterstart enrichment (ASE) combined.&#10;&#10;If the engine stays cranking for a while without catching, adjust the cranking pulse width setting at the temperature where you&#8217;re having this problem. It&#8217;s often best to start with what you think is not enough pulse width and add more in, since a flooded engine can take a bit longer to clear. A good rule of thumb to figure out which way to go is to try giving it a little bit of throttle and cranking it. If more throttle makes it easier to start, try less cranking pulse width. If it makes things worse, try more. Note that if you&#8217;re seeing zero cranking pulse width, you&#8217;ve probably triggered flood clear mode. Check your TPS readings, as having this go too high will shut down the injectors.&#10;&#10;If you find you&#8217;re not getting anywhere with the throttle test, try pulling a spark plug after a failed start, and see if it&#8217;s wet with fuel or dry. If it&#8217;s wet, reduce the fueling; if it&#8217;s dry, add more fuel to the cranking pulse width.&#10;&#10;" writeDate="Sat Dec 05 18:24:41 CET 2020"/>
+<bibliography author="TunerStudio MS Ultra 3.1.03 - EFI Analytics, Inc." tuneComment="Banks&#10;grouped them on cylinders 1 &amp; 4, and 2 &amp; 3&#10;&#10;- Injector model/type?&#10;- Does your coolant temperature sensor reading look correct? It should be close to your air temperature on your first cold start. If this reading is off, try recalibrating the coolant temperature sensor settings.&#10;- Do you get a steady RPM while cranking (what is steady?)&#10;- Spark timing correct or withing 2-3 degrees ballpark of what MS thinks it is&#10;&#10;- When the engine starts turning, the MegaSquirt will run off the cranking pulse width table in batch fire mode until the RPM rises above the cranking RPM threshold. &#10; This usually fires the fuel once per ignition event in batch fire, although the newer MS2/Extra and MS3 codes allow injecting fuel every other event, and MS3 1.3.0 and later allows sequential fire while cranking. &#10;Note that you can shut down the fuel when cranking by opening the throttle past the flood clear threshold setting.&#10;Once the RPM rises above the cranking threshold, the MegaSquirt transitions to the main fuel table. &#10;It will initially multiply the pulse width from this table by the warmup enrichment (WUE) and afterstart enrichment (ASE) combined.&#10;&#10;If the engine stays cranking for a while without catching, adjust the cranking pulse width setting at the temperature where you&#8217;re having this problem. It&#8217;s often best to start with what you think is not enough pulse width and add more in, since a flooded engine can take a bit longer to clear. A good rule of thumb to figure out which way to go is to try giving it a little bit of throttle and cranking it. If more throttle makes it easier to start, try less cranking pulse width. If it makes things worse, try more. Note that if you&#8217;re seeing zero cranking pulse width, you&#8217;ve probably triggered flood clear mode. Check your TPS readings, as having this go too high will shut down the injectors.&#10;&#10;If you find you&#8217;re not getting anywhere with the throttle test, try pulling a spark plug after a failed start, and see if it&#8217;s wet with fuel or dry. If it&#8217;s wet, reduce the fueling; if it&#8217;s dry, add more fuel to the cranking pulse width.&#10;&#10;" writeDate="Sun Dec 06 20:57:15 CET 2020"/>
 <versionInfo fileFormat="5.0" firmwareInfo="MS3+1.5.1+release+++++20171006+16%3A30BST+%28c%29+JSM%2FKC+********" nPages="20" signature="MS3 Format 0566.05 "/>
 <page>
 <pcVariable name="tsCanId">"CAN ID 0"</pcVariable>
@@ -70,9 +70,9 @@
 <constant digits="1" name="TpsBypassCLTRevlim" units="TPS %">90.0</constant>
 <constant digits="1" name="map0" units="%">9.3</constant>
 <constant digits="1" name="mapmax" units="%">260.9</constant>
-<constant digits="1" name="clt0" units="Â°C">-17.776</constant>
+<constant digits="1" name="clt0" units="°C">-17.776</constant>
 <constant digits="0" name="cltmult" units="%">100.0</constant>
-<constant digits="1" name="mat0" units="Â°C">-17.776</constant>
+<constant digits="1" name="mat0" units="°C">-17.776</constant>
 <constant digits="0" name="matmult" units="%">100.0</constant>
 <constant digits="0" name="tpsMin" units="ADC">56.0</constant>
 <constant digits="0" name="tpsMax" units="ADC">854.0</constant>
@@ -95,7 +95,7 @@
 <constant digits="0" name="IACminstep" units="steps">2.0</constant>
 <constant digits="0" name="dwellduty" units="%">49.53</constant>
 <constant digits="0" name="IACStart">250.0</constant>
-<constant digits="1" name="IdleHyst" units="Â°C">2.7775</constant>
+<constant digits="1" name="IdleHyst" units="°C">2.7775</constant>
 <constant digits="0" name="IACcrankpos" units="steps">100.0</constant>
 <constant digits="0" name="IACcrankxt" units="s">5.0</constant>
 <constant name="IACcurlim">"Moving only"</constant>
@@ -128,11 +128,10 @@
 <constant digits="0" name="egoDelta" units="%">1.0</constant>
 <constant digits="0" name="oldegoLimit" units="%">15.0</constant>
 <constant digits="3" name="EGOVtarget" units="Volts">0.44988</constant>
-<constant name="tempUnits">"Coolant/MAT Tables in Â°C"</constant>
 <constant digits="0" name="egonum">1.0</constant>
 <constant digits="0" name="rtc_trim" units="ppm">0.0</constant>
-<constant digits="1" name="fastIdleT" units="Â°C">59.994</constant>
-<constant digits="1" name="egoTemp" units="Â°C">71.104</constant>
+<constant digits="1" name="fastIdleT" units="°C">59.994</constant>
+<constant digits="1" name="egoTemp" units="°C">71.104</constant>
 <constant digits="0" name="egoRPM" units="RPM">1300.0</constant>
 <constant digits="2" name="reqFuel" units="ms">6.15</constant>
 <constant digits="0" name="divider">2.0</constant>
@@ -311,7 +310,7 @@
 <constant digits="0" name="pwmidlecranktaper" units="s">5.0</constant>
 <constant digits="1" name="knk_step_adv" units="deg">2.0</constant>
 <constant digits="0" name="fc_rpm_upper" units="rpm">1400.0</constant>
-<constant digits="1" name="fc_clt" units="Â°C">32.219</constant>
+<constant digits="1" name="fc_clt" units="°C">32.219</constant>
 <constant digits="1" name="fc_delay" units="s">1.5</constant>
 <constant name="tacho_opt3f">"Tacho"</constant>
 <constant digits="0" name="fc_ego_delay" units="s">0.0</constant>
@@ -371,7 +370,7 @@
 <constant digits="0" name="N2ORpm" units="RPM">3000.0</constant>
 <constant digits="0" name="N2ORpmMax" units="RPM">6000.0</constant>
 <constant digits="1" name="N2OTps" units="%">80.0</constant>
-<constant digits="1" name="N2OClt" units="Â°C">65.549</constant>
+<constant digits="1" name="N2OClt" units="°C">65.549</constant>
 <constant digits="2" name="N2OAngle" units="deg">10.0</constant>
 <constant digits="3" name="N2OPWLo" units="ms">6.0</constant>
 <constant digits="3" name="N2OPWHi" units="ms">3.0</constant>
@@ -469,7 +468,7 @@
 <constant name="idleve_on">"Off"</constant>
 <constant name="idleadv_vsson">"Off"</constant>
 <constant name="idle_special_ops_timing_assist">"Off"</constant>
-<constant digits="1" name="idleadvance_clt" units="Â°C">59.994</constant>
+<constant digits="1" name="idleadvance_clt" units="°C">59.994</constant>
 <constant digits="0" name="idleadvance_delay" units="s">2.0</constant>
 <constant cols="1" digits="1" name="idleadvance_curve" rows="4" units="deg">
          15.0 
@@ -627,7 +626,7 @@
 <constant digits="0" name="water_tps" units="%">70.0</constant>
 <constant digits="0" name="water_rpm" units="RPM">1500.0</constant>
 <constant digits="1" name="water_map" units="kPa">90.0</constant>
-<constant digits="1" name="water_mat" units="Â°C">15.554</constant>
+<constant digits="1" name="water_mat" units="°C">15.554</constant>
 <constant digits="1" name="boost_ctl_lowerlimit" units="kPa">100.0</constant>
 <constant name="enable_pollADC">"Disable"</constant>
 <constant name="enable_pollPWM">"Disable"</constant>
@@ -673,10 +672,10 @@
 <constant name="egt_conf_shutdown">"Off"</constant>
 <constant name="egt_conf_bank">"Both"</constant>
 <constant name="egt_conf_percyl">"Off"</constant>
-<constant digits="0" name="egtcal_temp0" units="Â°C">0.0</constant>
-<constant digits="0" name="egtcal_tempmax" units="Â°C">1249.875</constant>
-<constant digits="0" name="egt_warn" units="Â°C">882.134</constant>
-<constant digits="0" name="egt_max" units="Â°C">932.129</constant>
+<constant digits="0" name="egtcal_temp0" units="°C">0.0</constant>
+<constant digits="0" name="egtcal_tempmax" units="°C">1249.875</constant>
+<constant digits="0" name="egt_warn" units="°C">882.134</constant>
+<constant digits="0" name="egt_max" units="°C">932.129</constant>
 <constant digits="2" name="egt_time" units="s">0.02</constant>
 <constant digits="1" name="vss1_can_scale" units="%">1000.0</constant>
 <constant digits="0" name="vss1_can_scale_pulse">10000.0</constant>
@@ -739,8 +738,8 @@
 <constant digits="0" name="fanctl_idleup_delay" units="ms">100.0</constant>
 <constant digits="1" name="fanctl_idleup_adder_duty" units="%">1.568</constant>
 <constant digits="0" name="fanctl_idleup_adder_steps" units="steps">4.0</constant>
-<constant digits="1" name="fanctl_ontemp" units="Â°C">93.324</constant>
-<constant digits="1" name="fanctl_offtemp" units="Â°C">82.214</constant>
+<constant digits="1" name="fanctl_ontemp" units="°C">93.324</constant>
+<constant digits="1" name="fanctl_offtemp" units="°C">82.214</constant>
 <constant name="canadc_opt1">"Off"</constant>
 <constant name="canadc_opt2">"Off"</constant>
 <constant name="canadc_opt3">"Off"</constant>
@@ -773,7 +772,7 @@
 <constant digits="0" name="canadc_off6">42.0</constant>
 <constant digits="0" name="ac_idleup_cl_targetadder" units="rpm">300.0</constant>
 <constant digits="0" name="fan_idleup_cl_targetadder" units="rpm">0.0</constant>
-<constant digits="1" name="boost_ctl_clt_threshold" units="Â°C">76.659</constant>
+<constant digits="1" name="boost_ctl_clt_threshold" units="°C">76.659</constant>
 <constant name="ac_idleup_set2_tps">"On"</constant>
 <constant name="ac_idleup_set2_vss">"On"</constant>
 <constant name="ac_idleup_set2_rpm">"On"</constant>
@@ -795,7 +794,7 @@
 <constant digits="0" name="can_pwmout_offset" units="bytes">94.0</constant>
 <constant digits="3" name="n2o_timing_delay" units="s">0.04992</constant>
 <constant digits="3" name="n2o_timing_taper" units="s">0.04992</constant>
-<constant digits="1" name="idleve_clt" units="Â°C">59.994</constant>
+<constant digits="1" name="idleve_clt" units="°C">59.994</constant>
 <constant digits="0" name="idleve_delay" units="s">2.0</constant>
 <constant digits="0" name="ac_idleup_cl_lockout_mapadder" units="%">0.0</constant>
 <constant digits="0" name="UNALLOCATED_SPACE_0_0" units="RAW">
@@ -1199,8 +1198,8 @@
 <constant name="knock_int">"150"</constant>
 <constant digits="2" name="ff_tpw0" units="ms">1.0</constant>
 <constant digits="2" name="ff_tpw1" units="ms">5.0</constant>
-<constant digits="1" name="ff_temp0" units="Â°C">-39.996</constant>
-<constant digits="1" name="ff_temp1" units="Â°C">124.9875</constant>
+<constant digits="1" name="ff_temp0" units="°C">-39.996</constant>
+<constant digits="1" name="ff_temp1" units="°C">124.9875</constant>
 <constant name="fueltemp1">"Off"</constant>
 <constant name="fueltemp1_corr">"Off"</constant>
 <constant name="tc_knob">"Off"</constant>
@@ -1364,10 +1363,10 @@
 <constant name="cel_action1_ego">"Off"</constant>
 <constant name="cel_action1_sync">"Off"</constant>
 <constant name="cel_action1_map_an">"Off"</constant>
-<constant digits="1" name="cel_clt_cold" units="Â°C">-39.996</constant>
-<constant digits="1" name="cel_clt_warm" units="Â°C">99.99</constant>
+<constant digits="1" name="cel_clt_cold" units="°C">-39.996</constant>
+<constant digits="1" name="cel_clt_warm" units="°C">99.99</constant>
 <constant digits="1" name="cel_warmtime" units="mins">5.14794</constant>
-<constant digits="1" name="cel_mat_default" units="Â°C">37.774</constant>
+<constant digits="1" name="cel_mat_default" units="°C">37.774</constant>
 <constant digits="0" name="cel_revlim" units="RPM">3000.0</constant>
 <constant digits="1" name="cel_overboost" units="kPa">105.0</constant>
 <constant digits="0" name="cel_boost_duty" units="%">0.0</constant>
@@ -1376,8 +1375,8 @@
 <constant name="cel_opt3_flex">"Off"</constant>
 <constant digits="1" name="cel_retard" units="deg">0.0</constant>
 <constant digits="0" name="map_var_lower">0.0</constant>
-<constant digits="1" name="egt_minvalid" units="Â°C">-39.996</constant>
-<constant digits="1" name="egt_maxvalid" units="Â°C">1482.074</constant>
+<constant digits="1" name="egt_minvalid" units="°C">-39.996</constant>
+<constant digits="1" name="egt_maxvalid" units="°C">1482.074</constant>
 <constant digits="0" name="egt_var_upper">10000.0</constant>
 <constant digits="0" name="egt_var_lower">0.0</constant>
 <constant digits="0" name="cel_runtime" units="s">20.0</constant>
@@ -2151,7 +2150,7 @@
          180.0 
          150.0 
       </constant>
-<constant cols="1" digits="1" name="matTemps" rows="6" units="Â°C">
+<constant cols="1" digits="1" name="matTemps" rows="6" units="°C">
          71.104 
          82.214 
          93.324 
@@ -2318,7 +2317,7 @@
          95.0 
          100.0 
       </constant>
-<constant cols="1" digits="1" name="matCorrTemps2" rows="9" units="Â°C">
+<constant cols="1" digits="1" name="matCorrTemps2" rows="9" units="°C">
          -39.996 
          -19.998 
          0.0 
@@ -2329,7 +2328,7 @@
          89.991 
          119.988 
       </constant>
-<constant cols="1" digits="0" name="temp_table_p5" rows="10" units="Â°C">
+<constant cols="1" digits="0" name="temp_table_p5" rows="10" units="°C">
          -12.221 
          -1.111 
          9.999 
@@ -2379,7 +2378,7 @@
          900.0 
          800.0 
       </constant>
-<constant cols="1" digits="1" name="pwmidle_clt_temps" rows="8" units="Â°C">
+<constant cols="1" digits="1" name="pwmidle_clt_temps" rows="8" units="°C">
          21.109 
          26.664 
          32.219 
@@ -2389,7 +2388,7 @@
          54.439 
          59.994 
       </constant>
-<constant cols="1" digits="1" name="RevLimLookup" rows="8" units="Â°C">
+<constant cols="1" digits="1" name="RevLimLookup" rows="8" units="°C">
          0.0 
          19.998 
          37.774 
@@ -2475,7 +2474,7 @@
          127.0 
          102.0 
       </constant>
-<constant cols="1" digits="1" name="pwmidle_crank_clt_temps" rows="4" units="Â°C">
+<constant cols="1" digits="1" name="pwmidle_crank_clt_temps" rows="4" units="°C">
          -1.111 
          37.774 
          54.439 
@@ -3070,7 +3069,7 @@
          300.0 
          400.0 
       </constant>
-<constant cols="1" digits="1" name="tempTable" rows="10" units="Â°C">
+<constant cols="1" digits="1" name="tempTable" rows="10" units="°C">
          -39.996 
          -28.886 
          -17.776 
@@ -3461,7 +3460,7 @@
          110.0 
          100.0 
       </constant>
-<constant cols="1" digits="0" name="XClt_temps" rows="10" units="Â°C">
+<constant cols="1" digits="0" name="XClt_temps" rows="10" units="°C">
          -39.996 
          -28.886 
          -17.776 
@@ -3473,7 +3472,7 @@
          59.994 
          71.104 
       </constant>
-<constant cols="1" digits="0" name="TauClt_temps" rows="10" units="Â°C">
+<constant cols="1" digits="0" name="TauClt_temps" rows="10" units="°C">
          -39.996 
          -28.886 
          -17.776 
@@ -4396,7 +4395,7 @@
          1400.0 
          1600.0 
       </constant>
-<constant cols="1" digits="0" name="pwmidle_cl_initialvalue_matorclt" rows="5" units="Â°C">
+<constant cols="1" digits="0" name="pwmidle_cl_initialvalue_matorclt" rows="5" units="°C">
          -6.666 
          9.999 
          26.664 
@@ -4417,7 +4416,7 @@
          0.0 0.0 0.0 0.0 0.0 
          0.0 0.0 0.0 0.0 0.0 
       </constant>
-<constant cols="1" digits="0" name="knock_clts" rows="4" units="Â°C">
+<constant cols="1" digits="0" name="knock_clts" rows="4" units="°C">
          4.444 
          26.664 
          48.884 
@@ -4844,7 +4843,7 @@
          102.0 
          100.0 
       </constant>
-<constant cols="1" digits="0" name="temp_table_p21" rows="10" units="Â°C">
+<constant cols="1" digits="0" name="temp_table_p21" rows="10" units="°C">
          -12.221 
          -1.111 
          9.999 
@@ -4928,7 +4927,7 @@
          300.0 
          400.0 
       </constant>
-<constant cols="1" digits="0" name="dualfuel_temp" rows="10" units="Â°C">
+<constant cols="1" digits="0" name="dualfuel_temp" rows="10" units="°C">
          -12.221 
          -1.111 
          9.999 
@@ -5361,8 +5360,8 @@
 <constant digits="0" name="als_pwm_duty" units="%">75.0</constant>
 <constant digits="1" name="als_pausetime" units="s">10.0</constant>
 <constant digits="1" name="vvt_slew" units="deg">2.0</constant>
-<constant digits="1" name="als_minclt" units="Â°C">49.995</constant>
-<constant digits="1" name="als_maxclt" units="Â°C">109.989</constant>
+<constant digits="1" name="als_minclt" units="°C">49.995</constant>
+<constant digits="1" name="als_maxclt" units="°C">109.989</constant>
 <constant cols="1" digits="0" name="als_rpms" rows="6" units="rpm">
          1300.0 
          1600.0 
@@ -5413,7 +5412,7 @@
       </constant>
 <constant digits="0" name="als_minrpm" units="rpm">500.0</constant>
 <constant digits="0" name="als_maxrpm" units="rpm">3000.0</constant>
-<constant digits="1" name="als_maxmat" units="Â°C">76.659</constant>
+<constant digits="1" name="als_maxmat" units="°C">76.659</constant>
 <constant digits="1" name="vvt_onoff_ang" units="degrees">0.0</constant>
 <constant name="vvt_opt1_on">"Off"</constant>
 <constant name="vvt_opt1_filter">"Off"</constant>
@@ -5560,7 +5559,7 @@
       </constant>
 <constant name="als_pwm_opt_freq">"13Hz"</constant>
 <constant name="als_pwm_opt2">"IAC1"</constant>
-<constant digits="1" name="vvt_minclt" units="Â°C">-39.996</constant>
+<constant digits="1" name="vvt_minclt" units="°C">-39.996</constant>
 <constant digits="1" name="vvt_minduty1" units="%">0.0</constant>
 <constant digits="1" name="vvt_maxduty1" units="%">99.96</constant>
 <constant cols="1" digits="0" name="UNALLOCATED_SPACE_13_0" rows="2" units="RAW">
@@ -5807,7 +5806,7 @@
          4000.0 
          6000.0 
       </constant>
-<constant cols="1" digits="1" name="matCorrTemps" rows="6" units="Â°C">
+<constant cols="1" digits="1" name="matCorrTemps" rows="6" units="°C">
          4.444 
          15.554 
          37.774 
@@ -6083,7 +6082,7 @@
          4000.0 
          6000.0 
       </constant>
-<constant cols="1" digits="0" name="fp_temps" rows="10" units="Â°C">
+<constant cols="1" digits="0" name="fp_temps" rows="10" units="°C">
          -12.221 
          -1.111 
          9.999 
@@ -6194,668 +6193,6 @@
       </constant>
 </page>
 <page number="15" size="1024">
-<constant cols="1" digits="0" name="qfrtfielddata" rows="256">
-         16384.0 
-         16386.0 
-         16390.0 
-         16392.0 
-         8203.0 
-         8204.0 
-         16400.0 
-         16402.0 
-         16404.0 
-         16406.0 
-         16408.0 
-         16410.0 
-         16424.0 
-         16432.0 
-         16438.0 
-         16446.0 
-         16450.0 
-         8262.0 
-         8263.0 
-         8270.0 
-         8271.0 
-         8272.0 
-         8274.0 
-         8275.0 
-         8278.0 
-         8279.0 
-         8286.0 
-         8444.0 
-         16652.0 
-         16684.0 
-         8522.0 
-         16720.0 
-         16722.0 
-         8543.0 
-         16824.0 
-         8638.0 
-         8639.0 
-         8679.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-      </constant>
-<constant cols="16" digits="1" name="ltt_table1" rows="16" units="%">
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 
-         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 
-      </constant>
-<constant cols="1" digits="0" name="ltt_rpms" rows="16" units="RPM">
-         500.0 
-         800.0 
-         1100.0 
-         1400.0 
-         2000.0 
-         2600.0 
-         3100.0 
-         3700.0 
-         4300.0 
-         4900.0 
-         5400.0 
-         6000.0 
-         6500.0 
-         7000.0 
-         7200.0 
-         7500.0 
-      </constant>
-<constant cols="1" digits="1" name="ltt_loads" rows="16" units="%">
-         30.0 
-         40.0 
-         45.0 
-         50.0 
-         55.0 
-         60.0 
-         65.0 
-         70.0 
-         75.0 
-         80.0 
-         90.0 
-         95.0 
-         100.0 
-         200.0 
-         300.0 
-         400.0 
-      </constant>
-<constant cols="1" digits="0" name="portusage" rows="148">
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         10.0 
-         10.0 
-         10.0 
-         10.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         4.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         7.0 
-         0.0 
-         7.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         14.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         16.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         255.0 
-         0.0 
-         255.0 
-         0.0 
-      </constant>
-<constant cols="1" digits="0" name="portusage_a" rows="8">
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-      </constant>
-<constant cols="1" digits="0" name="portusage_b" rows="8">
-         10.0 
-         10.0 
-         10.0 
-         10.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-      </constant>
-<constant cols="1" digits="0" name="portusage_e" rows="8">
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         4.0 
-         0.0 
-         0.0 
-         0.0 
-      </constant>
-<constant cols="1" digits="0" name="portusage_h" rows="8">
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-      </constant>
-<constant cols="1" digits="0" name="portusage_j" rows="8">
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-      </constant>
-<constant cols="1" digits="0" name="portusage_k" rows="8">
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-      </constant>
-<constant cols="1" digits="0" name="portusage_m" rows="8">
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-      </constant>
-<constant cols="1" digits="0" name="portusage_p" rows="8">
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-      </constant>
-<constant cols="1" digits="0" name="portusage_t" rows="8">
-         0.0 
-         7.0 
-         0.0 
-         7.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-      </constant>
-<constant cols="1" digits="0" name="portusage_ad0h" rows="8">
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-      </constant>
-<constant cols="1" digits="0" name="portusage_ad0l" rows="8">
-         14.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         16.0 
-         0.0 
-         0.0 
-      </constant>
-<constant cols="1" digits="0" name="portusage_canin" rows="8">
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-      </constant>
-<constant cols="1" digits="0" name="portusage_canout" rows="16">
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-      </constant>
-<constant cols="1" digits="0" name="portusage_canadc" rows="24">
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-      </constant>
-<constant cols="1" digits="0" name="portusage_canpwm" rows="8">
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-      </constant>
-<constant cols="1" digits="0" name="portusage_pwmscl" rows="4">
-         255.0 
-         0.0 
-         255.0 
-         0.0 
-      </constant>
-<constant cols="1" digits="0" name="portusage_loop" rows="8">
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-      </constant>
-<constant cols="1" digits="0" name="portusage_s" rows="8">
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-         0.0 
-      </constant>
 <constant cols="1" digits="0" name="UNALLOCATED_TOP_15" rows="28" units="RAW">
          64.0 
          22.0 
@@ -8156,7 +7493,7 @@
          12.288 
          15.104 
       </constant>
-<constant cols="1" digits="0" name="alternator_temp" rows="6" units="Â°C">
+<constant cols="1" digits="0" name="alternator_temp" rows="6" units="°C">
          -39.996 
          -24.442 
          -8.888 
