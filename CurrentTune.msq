@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <msq xmlns="http://www.msefi.com/:msq">
-<bibliography author="TunerStudio MS Ultra 3.1.04 - EFI Analytics, Inc." tuneComment="Banks&#10;grouped them on cylinders 1 &amp; 4, and 2 &amp; 3&#10;&#10;- Injector model/type?&#10;- Does your coolant temperature sensor reading look correct? It should be close to your air temperature on your first cold start. If this reading is off, try recalibrating the coolant temperature sensor settings.&#10;- Do you get a steady RPM while cranking (what is steady?)&#10;- Spark timing correct or withing 2-3 degrees ballpark of what MS thinks it is&#10;&#10;- When the engine starts turning, the MegaSquirt will run off the cranking pulse width table in batch fire mode until the RPM rises above the cranking RPM threshold. &#10; This usually fires the fuel once per ignition event in batch fire, although the newer MS2/Extra and MS3 codes allow injecting fuel every other event, and MS3 1.3.0 and later allows sequential fire while cranking. &#10;Note that you can shut down the fuel when cranking by opening the throttle past the flood clear threshold setting.&#10;Once the RPM rises above the cranking threshold, the MegaSquirt transitions to the main fuel table. &#10;It will initially multiply the pulse width from this table by the warmup enrichment (WUE) and afterstart enrichment (ASE) combined.&#10;&#10;If the engine stays cranking for a while without catching, adjust the cranking pulse width setting at the temperature where you&#8217;re having this problem. It&#8217;s often best to start with what you think is not enough pulse width and add more in, since a flooded engine can take a bit longer to clear. A good rule of thumb to figure out which way to go is to try giving it a little bit of throttle and cranking it. If more throttle makes it easier to start, try less cranking pulse width. If it makes things worse, try more. Note that if you&#8217;re seeing zero cranking pulse width, you&#8217;ve probably triggered flood clear mode. Check your TPS readings, as having this go too high will shut down the injectors.&#10;&#10;If you find you&#8217;re not getting anywhere with the throttle test, try pulling a spark plug after a failed start, and see if it&#8217;s wet with fuel or dry. If it&#8217;s wet, reduce the fueling; if it&#8217;s dry, add more fuel to the cranking pulse width.&#10;&#10;" writeDate="Tue Dec 08 23:31:51 CET 2020"/>
+<bibliography author="TunerStudio MS Ultra 3.1.04 - EFI Analytics, Inc." tuneComment="Banks&#10;grouped them on cylinders 1 &amp; 4, and 2 &amp; 3&#10;&#10;- Injector model/type?&#10;- Does your coolant temperature sensor reading look correct? It should be close to your air temperature on your first cold start. If this reading is off, try recalibrating the coolant temperature sensor settings.&#10;- Do you get a steady RPM while cranking (what is steady?)&#10;- Spark timing correct or withing 2-3 degrees ballpark of what MS thinks it is&#10;&#10;- When the engine starts turning, the MegaSquirt will run off the cranking pulse width table in batch fire mode until the RPM rises above the cranking RPM threshold. &#10; This usually fires the fuel once per ignition event in batch fire, although the newer MS2/Extra and MS3 codes allow injecting fuel every other event, and MS3 1.3.0 and later allows sequential fire while cranking. &#10;Note that you can shut down the fuel when cranking by opening the throttle past the flood clear threshold setting.&#10;Once the RPM rises above the cranking threshold, the MegaSquirt transitions to the main fuel table. &#10;It will initially multiply the pulse width from this table by the warmup enrichment (WUE) and afterstart enrichment (ASE) combined.&#10;&#10;If the engine stays cranking for a while without catching, adjust the cranking pulse width setting at the temperature where you&#8217;re having this problem. It&#8217;s often best to start with what you think is not enough pulse width and add more in, since a flooded engine can take a bit longer to clear. A good rule of thumb to figure out which way to go is to try giving it a little bit of throttle and cranking it. If more throttle makes it easier to start, try less cranking pulse width. If it makes things worse, try more. Note that if you&#8217;re seeing zero cranking pulse width, you&#8217;ve probably triggered flood clear mode. Check your TPS readings, as having this go too high will shut down the injectors.&#10;&#10;If you find you&#8217;re not getting anywhere with the throttle test, try pulling a spark plug after a failed start, and see if it&#8217;s wet with fuel or dry. If it&#8217;s wet, reduce the fueling; if it&#8217;s dry, add more fuel to the cranking pulse width.&#10;&#10;" writeDate="Sat Dec 12 19:36:40 CET 2020"/>
 <versionInfo fileFormat="5.0" firmwareInfo="MS3+1.5.1+release+++++20171006+16%3A30BST+%28c%29+JSM%2FKC+********" nPages="20" signature="MS3 Format 0566.05 "/>
 <page>
 <pcVariable name="tsCanId">"CAN ID 0"</pcVariable>
@@ -44,12 +44,12 @@
          0.0 
       </pcVariable>
 <pcVariable cols="1" digits="0" name="wueAnalRecommend" rows="10" units="%">
-         218.0 
-         218.0 
-         198.0 
-         188.0 
-         173.0 
-         155.0 
+         247.0 
+         247.0 
+         227.0 
+         217.0 
+         202.0 
+         175.0 
          135.0 
          117.0 
          102.0 
@@ -2128,9 +2128,9 @@
          101.0 
       </constant>
 <constant cols="1" digits="0" name="asePctTable" rows="10" units="%">
+         47.0 
          45.0 
          43.0 
-         41.0 
          39.0 
          37.0 
          35.0 
@@ -2991,12 +2991,12 @@
          11.0 11.0 11.0 11.0 11.0 11.0 11.0 11.0 11.0 11.0 11.0 11.0 
       </constant>
 <constant cols="1" digits="0" name="wueBins" rows="10" units="%">
-         218.0 
-         218.0 
-         198.0 
-         188.0 
-         173.0 
-         155.0 
+         247.0 
+         247.0 
+         227.0 
+         217.0 
+         202.0 
+         175.0 
          135.0 
          117.0 
          102.0 
@@ -3744,10 +3744,10 @@
 </page>
 <page number="7" size="1024">
 <constant cols="16" digits="1" name="advanceTable1" rows="16" units="deg">
-         19.0 19.0 31.0 33.5 35.0 36.0 37.0 38.0 38.0 38.0 38.0 38.0 38.0 38.0 38.0 38.0 
-         18.3 19.0 30.0 33.0 35.0 34.0 37.0 38.0 38.0 38.0 38.0 38.0 38.0 38.0 38.0 38.0 
-         18.0 19.0 29.5 32.5 34.0 34.0 36.0 37.0 37.0 37.0 37.0 37.0 37.0 37.0 37.0 37.0 
-         18.0 20.0 29.0 32.0 33.0 34.0 35.0 36.0 36.0 36.0 36.0 36.0 36.0 36.0 36.0 36.0 
+         20.0 20.0 31.0 33.5 35.0 36.0 37.0 38.0 38.0 38.0 38.0 38.0 38.0 38.0 38.0 38.0 
+         19.3 20.0 30.0 33.0 35.0 34.0 37.0 38.0 38.0 38.0 38.0 38.0 38.0 38.0 38.0 38.0 
+         19.0 20.0 29.5 32.5 34.0 34.0 36.0 37.0 37.0 37.0 37.0 37.0 37.0 37.0 37.0 37.0 
+         19.0 21.0 29.0 32.0 33.0 34.0 35.0 36.0 36.0 36.0 36.0 36.0 36.0 36.0 36.0 36.0 
          17.0 20.0 28.0 30.0 31.0 32.0 33.0 34.0 34.0 34.0 34.0 34.0 34.0 34.0 34.0 34.0 
          16.0 18.5 27.0 28.0 29.0 30.0 31.0 32.0 32.0 32.0 32.0 32.0 32.0 32.0 32.0 32.0 
          15.0 18.0 25.0 26.0 27.0 28.0 29.0 30.0 30.0 30.0 30.0 30.0 30.0 30.0 30.0 30.0 
@@ -6194,6 +6194,668 @@
       </constant>
 </page>
 <page number="15" size="1024">
+<constant cols="1" digits="0" name="qfrtfielddata" rows="256">
+         16384.0 
+         16386.0 
+         16390.0 
+         16392.0 
+         8203.0 
+         8204.0 
+         16400.0 
+         16402.0 
+         16404.0 
+         16406.0 
+         16408.0 
+         16410.0 
+         16424.0 
+         16426.0 
+         16428.0 
+         16432.0 
+         16434.0 
+         16438.0 
+         16446.0 
+         16450.0 
+         8262.0 
+         8263.0 
+         8270.0 
+         8271.0 
+         8272.0 
+         8274.0 
+         8275.0 
+         8278.0 
+         8279.0 
+         8286.0 
+         8444.0 
+         16652.0 
+         16654.0 
+         16656.0 
+         16658.0 
+         16660.0 
+         16662.0 
+         16664.0 
+         16666.0 
+         16684.0 
+         16686.0 
+         16688.0 
+         16690.0 
+         16692.0 
+         16694.0 
+         16696.0 
+         16698.0 
+         8522.0 
+         16720.0 
+         16722.0 
+         8543.0 
+         16766.0 
+         16768.0 
+         16770.0 
+         16824.0 
+         16826.0 
+         16828.0 
+         8638.0 
+         8639.0 
+         16860.0 
+         8679.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+      </constant>
+<constant cols="16" digits="1" name="ltt_table1" rows="16" units="%">
+         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 
+         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 
+         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 
+         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 
+         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 
+         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 
+         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 
+         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 
+         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 
+         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 
+         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 
+         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 
+         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 
+         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 
+         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 
+         0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 
+      </constant>
+<constant cols="1" digits="0" name="ltt_rpms" rows="16" units="RPM">
+         500.0 
+         800.0 
+         1100.0 
+         1400.0 
+         2000.0 
+         2600.0 
+         3100.0 
+         3700.0 
+         4300.0 
+         4900.0 
+         5400.0 
+         6000.0 
+         6500.0 
+         7000.0 
+         7200.0 
+         7500.0 
+      </constant>
+<constant cols="1" digits="1" name="ltt_loads" rows="16" units="%">
+         30.0 
+         40.0 
+         45.0 
+         50.0 
+         55.0 
+         60.0 
+         65.0 
+         70.0 
+         75.0 
+         80.0 
+         90.0 
+         95.0 
+         100.0 
+         200.0 
+         300.0 
+         400.0 
+      </constant>
+<constant cols="1" digits="0" name="portusage" rows="148">
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         10.0 
+         10.0 
+         10.0 
+         10.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         4.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         7.0 
+         0.0 
+         7.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         14.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         16.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         255.0 
+         0.0 
+         255.0 
+         0.0 
+      </constant>
+<constant cols="1" digits="0" name="portusage_a" rows="8">
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+      </constant>
+<constant cols="1" digits="0" name="portusage_b" rows="8">
+         10.0 
+         10.0 
+         10.0 
+         10.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+      </constant>
+<constant cols="1" digits="0" name="portusage_e" rows="8">
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         4.0 
+         0.0 
+         0.0 
+         0.0 
+      </constant>
+<constant cols="1" digits="0" name="portusage_h" rows="8">
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+      </constant>
+<constant cols="1" digits="0" name="portusage_j" rows="8">
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+      </constant>
+<constant cols="1" digits="0" name="portusage_k" rows="8">
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+      </constant>
+<constant cols="1" digits="0" name="portusage_m" rows="8">
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+      </constant>
+<constant cols="1" digits="0" name="portusage_p" rows="8">
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+      </constant>
+<constant cols="1" digits="0" name="portusage_t" rows="8">
+         0.0 
+         7.0 
+         0.0 
+         7.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+      </constant>
+<constant cols="1" digits="0" name="portusage_ad0h" rows="8">
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+      </constant>
+<constant cols="1" digits="0" name="portusage_ad0l" rows="8">
+         14.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         16.0 
+         0.0 
+         0.0 
+      </constant>
+<constant cols="1" digits="0" name="portusage_canin" rows="8">
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+      </constant>
+<constant cols="1" digits="0" name="portusage_canout" rows="16">
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+      </constant>
+<constant cols="1" digits="0" name="portusage_canadc" rows="24">
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+      </constant>
+<constant cols="1" digits="0" name="portusage_canpwm" rows="8">
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+      </constant>
+<constant cols="1" digits="0" name="portusage_pwmscl" rows="4">
+         255.0 
+         0.0 
+         255.0 
+         0.0 
+      </constant>
+<constant cols="1" digits="0" name="portusage_loop" rows="8">
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+      </constant>
+<constant cols="1" digits="0" name="portusage_s" rows="8">
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+      </constant>
 <constant cols="1" digits="0" name="UNALLOCATED_TOP_15" rows="28" units="RAW">
          0.0 
          22.0 
@@ -6203,26 +6865,26 @@
          19.0 
          66.0 
          66.0 
-         200.0 
+         64.0 
          32.0 
          7.0 
          4.0 
          96.0 
          201.0 
-         144.0 
+         146.0 
          4.0 
-         17.0 
-         60.0 
-         53.0 
-         3.0 
-         156.0 
-         170.0 
+         23.0 
+         52.0 
+         52.0 
+         135.0 
+         152.0 
+         168.0 
          240.0 
          152.0 
          214.0 
-         236.0 
+         252.0 
          105.0 
-         227.0 
+         225.0 
       </constant>
 </page>
 <page number="16" size="1024">
