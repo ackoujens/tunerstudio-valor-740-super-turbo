@@ -2,8 +2,9 @@
 My first standalone MegaSquirt ECU project using a Volvo 740 Turbo wagon.
 
 ## Specifications
-- Primary injector size: 312cc
-- Vehicle weight: 1400kg (TODO: go to weighing bridge)
+
+- Primary injector size: 315cc
+- Vehicle weight: 1458kg (TODO: go to weighing bridge)
 - Tire pressure: 43psi / 3bar (TODO: measure tire pressure)
 - Frontal area: 0.808m^2
 - Drag coefficient: 0.41
