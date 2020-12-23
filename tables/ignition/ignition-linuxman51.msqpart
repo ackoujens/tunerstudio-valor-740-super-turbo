@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<msq xmlns="http://www.msefi.com/:msq">
+<bibliography author="TunerStudio MS Ultra 3.1.05 - EFI Analytics, Inc." tuneComment="Banks&#10;grouped them on cylinders 1 &amp; 4, and 2 &amp; 3&#10;&#10;- Injector model/type?&#10;- Does your coolant temperature sensor reading look correct? It should be close to your air temperature on your first cold start. If this reading is off, try recalibrating the coolant temperature sensor settings.&#10;- Do you get a steady RPM while cranking (what is steady?)&#10;- Spark timing correct or withing 2-3 degrees ballpark of what MS thinks it is&#10;&#10;- When the engine starts turning, the MegaSquirt will run off the cranking pulse width table in batch fire mode until the RPM rises above the cranking RPM threshold. &#10; This usually fires the fuel once per ignition event in batch fire, although the newer MS2/Extra and MS3 codes allow injecting fuel every other event, and MS3 1.3.0 and later allows sequential fire while cranking. &#10;Note that you can shut down the fuel when cranking by opening the throttle past the flood clear threshold setting.&#10;Once the RPM rises above the cranking threshold, the MegaSquirt transitions to the main fuel table. &#10;It will initially multiply the pulse width from this table by the warmup enrichment (WUE) and afterstart enrichment (ASE) combined.&#10;&#10;If the engine stays cranking for a while without catching, adjust the cranking pulse width setting at the temperature where you&#8217;re having this problem. It&#8217;s often best to start with what you think is not enough pulse width and add more in, since a flooded engine can take a bit longer to clear. A good rule of thumb to figure out which way to go is to try giving it a little bit of throttle and cranking it. If more throttle makes it easier to start, try less cranking pulse width. If it makes things worse, try more. Note that if you&#8217;re seeing zero cranking pulse width, you&#8217;ve probably triggered flood clear mode. Check your TPS readings, as having this go too high will shut down the injectors.&#10;&#10;If you find you&#8217;re not getting anywhere with the throttle test, try pulling a spark plug after a failed start, and see if it&#8217;s wet with fuel or dry. If it&#8217;s wet, reduce the fueling; if it&#8217;s dry, add more fuel to the cranking pulse width.&#10;&#10;" writeDate="Tue Dec 22 23:13:16 CET 2020"/>
+<versionInfo fileFormat="5.0" firmwareInfo="MS3+1.5.1+release+++++20171006+16%3A30BST+%28c%29+JSM%2FKC+********" nPages="20" signature="MS3 Format 0566.05 "/>
+<page>
+<pcVariable digits="0" name="rpmhigh" units="rpm">9000.0</pcVariable>
+<pcVariable digits="0" name="loadhigh">400.0</pcVariable>
+</page>
+<page number="0" size="1024"/>
+<page number="1" size="1024"/>
+<page number="2" size="1024"/>
+<page number="3" size="1024"/>
+<page number="4" size="1024"/>
+<page number="5" size="1024"/>
+<page number="6" size="1024"/>
+<page number="7" size="1024">
+<constant cols="16" digits="1" name="advanceTable1" rows="16" units="deg">
+         14.0 15.0 16.0 25.0 38.0 42.0 44.0 45.0 45.0 46.0 45.0 28.0 28.0 28.0 28.0 28.0 
+         14.0 14.3 19.3 30.3 41.3 47.3 49.3 50.3 50.3 50.7 50.3 25.3 25.3 25.3 25.3 25.3 
+         14.0 14.0 21.0 33.0 43.0 50.0 52.0 53.0 53.0 53.0 53.0 24.0 24.0 24.0 24.0 24.0 
+         14.4 14.8 22.6 32.6 41.8 47.6 49.6 51.4 51.8 51.8 49.8 23.2 23.2 23.2 23.2 23.2 
+         14.6 15.2 23.4 32.4 41.2 46.4 48.4 50.6 51.2 51.2 48.2 22.8 22.8 22.8 22.8 22.8 
+         14.8 15.6 24.2 32.2 40.6 45.2 47.2 49.8 50.6 50.6 46.6 22.4 22.4 22.4 22.4 22.4 
+         15.0 16.0 25.0 32.0 40.0 44.0 46.0 49.0 50.0 50.0 45.0 22.0 22.0 22.0 22.0 22.0 
+         13.0 17.0 26.0 31.0 35.0 30.0 41.0 42.0 43.0 43.0 41.0 19.0 19.0 19.0 19.0 19.0 
+         13.0 18.0 24.0 28.0 30.0 33.0 35.0 36.0 36.0 36.0 36.0 12.0 12.0 12.0 12.0 12.0 
+         13.0 22.0 22.0 24.0 27.0 28.0 31.0 33.0 34.0 35.0 34.0 9.0 9.0 9.0 9.0 9.0 
+         13.0 22.0 22.0 23.0 23.0 25.0 27.0 29.0 31.0 32.0 31.0 5.0 5.0 5.0 5.0 5.0 
+         13.0 18.0 18.0 20.0 21.0 22.0 23.0 26.0 27.0 27.0 27.0 3.0 3.0 3.0 3.0 3.0 
+         12.0 15.0 15.0 16.0 17.0 17.0 18.0 21.0 22.0 23.0 22.0 1.0 1.0 1.0 1.0 1.0 
+         11.0 14.0 14.0 14.0 15.0 15.0 16.0 17.0 17.0 18.0 18.0 4.0 4.0 4.0 4.0 4.0 
+         10.0 10.0 9.0 11.0 12.0 12.0 12.0 12.0 12.0 12.0 12.0 5.0 5.0 5.0 5.0 5.0 
+         10.0 10.0 10.0 10.0 10.0 10.0 10.0 10.0 10.0 10.0 10.0 5.0 5.0 5.0 5.0 5.0 
+      </constant>
+</page>
+<page number="8" size="1024"/>
+<page number="9" size="1024">
+<constant cols="1" digits="0" name="srpm_table1" rows="16" units="RPM">
+         500.0 
+         700.0 
+         1500.0 
+         2000.0 
+         2500.0 
+         3000.0 
+         3500.0 
+         4000.0 
+         4500.0 
+         5000.0 
+         5500.0 
+         6000.0 
+         6200.0 
+         6500.0 
+         6800.0 
+         7000.0 
+      </constant>
+<constant cols="1" digits="1" name="smap_table1" rows="16" units="kPa">
+         30.0 
+         50.0 
+         60.0 
+         70.0 
+         75.0 
+         80.0 
+         85.0 
+         100.0 
+         120.0 
+         140.0 
+         160.0 
+         180.0 
+         200.0 
+         220.0 
+         235.0 
+         250.0 
+      </constant>
+</page>
+<page number="10" size="1024"/>
+<page number="11" size="1024"/>
+<page number="12" size="1024"/>
+<page number="13" size="1024"/>
+<page number="14" size="1024"/>
+<page number="15" size="1024"/>
+<page number="16" size="1024"/>
+<page number="17" size="1024"/>
+<page number="18" size="1024"/>
+<page number="19" size="1024"/>
+<settings Comment="These setting are only used if this msq is opened without a project.">
+<setting name="PW_4X_OFF" value="PW_4X_OFF"/>
+<setting name="CAN_COMMANDS" value="CAN_COMMANDS"/>
+<setting name="PORT_STATUS_OFF" value="PORT_STATUS_OFF"/>
+<setting name="CYL_12_16_SUPPORT_OFF" value="CYL_12_16_SUPPORT_OFF"/>
+<setting name="NARROW_BAND_EGO" value="NARROW_BAND_EGO"/>
+<setting name="OUTMSG_EDITING_OFF" value="OUTMSG_EDITING_OFF"/>
+<setting name="CELSIUS" value="CELSIUS"/>
+<setting name="INTERNAL_LOG_FIELDS_OFF" value="INTERNAL_LOG_FIELDS_OFF"/>
+</settings>
+<userComments Comment="These are user comments that can be related to a particular setting or dialog."/>
+</msq>
