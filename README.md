@@ -3,7 +3,8 @@ My first standalone MegaSquirt ECU project using a Volvo 740 Turbo wagon.
 
 ## Specifications
 
-- Primary injector size: 315cc
+- Injectors: BOSCH Skinny Greens (0 280 155 968) 
+- Injector flow: 453cc @ 3BAR (TODO: Custom flow/dead time test)
 - Vehicle weight: 1458kg (TODO: go to weighing bridge)
 - Tire pressure: 43psi / 3bar (TODO: measure tire pressure)
 - Frontal area: 0.808m^2
