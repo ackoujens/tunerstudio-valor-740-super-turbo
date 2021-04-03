@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <msq xmlns="http://www.msefi.com/:msq">
-<bibliography author="TunerStudio MS Ultra 3.1.05 - EFI Analytics, Inc." tuneComment="" writeDate="Sun Feb 28 14:27:53 CET 2021"/>
+<bibliography author="TunerStudio MS Ultra 3.1.05 - EFI Analytics, Inc." tuneComment="" writeDate="Sat Apr 03 16:51:38 CEST 2021"/>
 <versionInfo fileFormat="5.0" firmwareInfo="MS3+1.5.1+release+++++20171006+16%3A30BST+%28c%29+JSM%2FKC+********" nPages="20" signature="MS3 Format 0566.05 "/>
 <page>
 <pcVariable name="tsCanId">"0"</pcVariable>
@@ -129,6 +129,7 @@
 <constant digits="0" name="egoDelta" units="%">1.0</constant>
 <constant digits="0" name="oldegoLimit" units="%">15.0</constant>
 <constant digits="3" name="EGOVtarget" units="Volts">0.44988</constant>
+<constant name="tempUnits">"Coolant/MAT Tables in °C"</constant>
 <constant digits="0" name="egonum">1.0</constant>
 <constant digits="0" name="rtc_trim" units="ppm">0.0</constant>
 <constant digits="1" name="fastIdleT" units="°C">59.994</constant>
@@ -1323,12 +1324,12 @@
 <constant digits="1" name="oddfireangs4">180.0</constant>
 <constant digits="1" name="oddfireangs5">60.0</constant>
 <constant digits="1" name="oddfireangs6">60.0</constant>
-<constant name="cel_opt_on">"Off"</constant>
-<constant name="cel_opt_stat">"Off"</constant>
+<constant name="cel_opt_on">"On"</constant>
+<constant name="cel_opt_stat">"EGO"</constant>
 <constant name="cel_opt_adc">"Fluctuation"</constant>
-<constant name="cel_opt_flash">"Solid"</constant>
-<constant name="cel_opt_when">"Off"</constant>
-<constant name="cel_port">"Off"</constant>
+<constant name="cel_opt_flash">"Flash-codes"</constant>
+<constant name="cel_opt_when">"On"</constant>
+<constant name="cel_port">"Spk H"</constant>
 <constant digits="1" name="afr_min" units="AFR">8.5</constant>
 <constant digits="1" name="afr_max" units="AFR">22.0</constant>
 <constant digits="0" name="afr_var_upper">2000.0</constant>
@@ -1348,27 +1349,27 @@
 <constant digits="1" name="batt_minv">7.0</constant>
 <constant digits="1" name="batt_maxv">23.0</constant>
 <constant digits="0" name="batt_var_upper">15.0</constant>
-<constant name="cel_opt2_map">"Off"</constant>
-<constant name="cel_opt2_mat">"Off"</constant>
-<constant name="cel_opt2_clt">"Off"</constant>
-<constant name="cel_opt2_tps">"Off"</constant>
-<constant name="cel_opt2_batt">"Off"</constant>
-<constant name="cel_opt2_afr0">"Off"</constant>
-<constant name="cel_opt2_sync">"Off"</constant>
+<constant name="cel_opt2_map">"On"</constant>
+<constant name="cel_opt2_mat">"On"</constant>
+<constant name="cel_opt2_clt">"On"</constant>
+<constant name="cel_opt2_tps">"On"</constant>
+<constant name="cel_opt2_batt">"On"</constant>
+<constant name="cel_opt2_afr0">"On"</constant>
+<constant name="cel_opt2_sync">"On"</constant>
 <constant name="cel_opt2_egt">"Off"</constant>
-<constant name="cel_action1_map">"Off"</constant>
-<constant name="cel_action1_mat">"Off"</constant>
-<constant name="cel_action1_clt">"Off"</constant>
-<constant name="cel_action1_tps">"Off"</constant>
-<constant name="cel_action1_batt">"Off"</constant>
-<constant name="cel_action1_ego">"Off"</constant>
+<constant name="cel_action1_map">"On"</constant>
+<constant name="cel_action1_mat">"On"</constant>
+<constant name="cel_action1_clt">"On"</constant>
+<constant name="cel_action1_tps">"On"</constant>
+<constant name="cel_action1_batt">"On"</constant>
+<constant name="cel_action1_ego">"On"</constant>
 <constant name="cel_action1_sync">"Off"</constant>
-<constant name="cel_action1_map_an">"Off"</constant>
+<constant name="cel_action1_map_an">"On"</constant>
 <constant digits="1" name="cel_clt_cold" units="°C">-39.996</constant>
-<constant digits="1" name="cel_clt_warm" units="°C">99.99</constant>
-<constant digits="1" name="cel_warmtime" units="mins">5.14794</constant>
+<constant digits="1" name="cel_clt_warm" units="°C">89.991</constant>
+<constant digits="1" name="cel_warmtime" units="mins">5.09796</constant>
 <constant digits="1" name="cel_mat_default" units="°C">37.774</constant>
-<constant digits="0" name="cel_revlim" units="RPM">3000.0</constant>
+<constant digits="0" name="cel_revlim" units="RPM">2500.0</constant>
 <constant digits="1" name="cel_overboost" units="kPa">105.0</constant>
 <constant digits="0" name="cel_boost_duty" units="%">0.0</constant>
 <constant digits="0" name="cel_boost_duty2" units="%">0.0</constant>
